@@ -1,16 +1,23 @@
-function App() {
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+
+import MainLayout from "./layouts/MainLayout";
+import About from "./pages/About";
+// import Contact from "./pages/Contact";
+
+const App: React.FC = () => {
   return (
-    <main className="h-screen flex items-center justify-center bg-gradient-to-r from-purple-500 to-pink-500">
-      <div className="p-10 rounded-2xl bg-white/20 backdrop-blur-lg shadow-xl">
-        <h1 className="text-5xl font-extrabold text-white drop-shadow-lg">
-          🚀 Portafolio con Tailwind 4 + React + Vite + TS
-        </h1>
-        <p className="mt-4 text-white text-lg">
-          Listo para construir tu portafolio ✨
-        </p>
-      </div>
-    </main>
+    <BrowserRouter>
+      <MainLayout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          {/* <Route path="/contact" element={<Contact />} /> */}
+        </Routes>
+      </MainLayout>
+    </BrowserRouter >
   );
-}
+};
 
 export default App;
