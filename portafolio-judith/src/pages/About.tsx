@@ -24,8 +24,10 @@ const About: React.FC = () => {
                         </div>
                         {/* Texto informativo sobre mi */}
                         <div>
-                            <p className="mt-4 sm:mt-4 text-black font-thin text-xl sm:text-xl">
-                                Soy un apasionado del desarrollo frontend, siempre buscando aprender y mejorar mis habilidades.
+                            <p className="mt-4 sm:mt-10 text-black font-thin text-xl sm:text-xl">
+                               Passionate and proactive developer with experience creating dynamic and responsive user interfaces.
+                                I stand out for my ability to lead teams, optimize development processes, and apply agile methodologies that guarantee the delivery of high-quality code.
+                                My goal is to contribute my technical expertise and leadership to achieve the team's goals and exceed project expectations.
                             </p>
                         </div>
 
