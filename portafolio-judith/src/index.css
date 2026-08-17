@@ -1,3 +1,140 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+	font-family: "Saira";
+	src: url("/fonts/Saira-Thin.ttf") format("truetype");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Saira";
+	src: url("/fonts/Saira-ExtraLight.ttf") format("truetype");
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Saira";
+	src: url("/fonts/Saira-Light.ttf") format("truetype");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Saira";
+	src: url("/fonts/Saira-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Saira";
+	src: url("/fonts/Saira-Medium.ttf") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Saira";
+	src: url("/fonts/Saira-SemiBold.ttf") format("truetype");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Saira";
+	src: url("/fonts/Saira-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Saira";
+	src: url("/fonts/Saira-ExtraBold.ttf") format("truetype");
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Saira";
+	src: url("/fonts/Saira-Black.ttf") format("truetype");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+body {
+	font-family: "Saira", sans-serif;
+	font-synthesis: none;
+}
+
+.font-saira {
+	font-family: "Saira", sans-serif;
+}
+
+#root {
+	min-height: 100vh;
+}
+
+.bg-layer {
+	position: fixed;
+	inset: 0;
+	z-index: -10;
+	overflow: hidden;
+}
+
+.bg-image {
+	width: 110%;
+	height: 110%;
+	margin-left: -5%;
+	margin-top: -5%;
+	object-fit: cover;
+	animation: bg-float 18s ease-in-out infinite;
+	will-change: transform;
+}
+
+@keyframes bg-float {
+	0% {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+	25% {
+		transform: translate3d(-10px, 8px, 0) scale(1.015);
+	}
+	50% {
+		transform: translate3d(8px, -12px, 0) scale(1.03);
+	}
+	75% {
+		transform: translate3d(12px, 6px, 0) scale(1.015);
+	}
+	100% {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+}
+
+@media (max-width: 768px) {
+	.bg-image {
+		width: 120%;
+		height: 120%;
+		margin-left: -10%;
+		margin-top: -10%;
+		animation-duration: 22s;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.bg-image {
+		animation: none;
+		transform: scale(1.03);
+	}
+}

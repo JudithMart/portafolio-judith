@@ -15,7 +15,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <Navbar />
 
             {/* Contenido de la página */}
-            <main className="pt-20">
+            <main className="pt-1 ">
                 {children}
             </main>
 
