@@ -21,7 +21,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
 
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-xl
-             -z-10 text-white font-medium text-center w-full pb-2">
+             -z-10 text-primary font-medium text-center w-full pb-2">
                 By Agui Martínez
             </div>
             {/* Footer fijo abajo */}

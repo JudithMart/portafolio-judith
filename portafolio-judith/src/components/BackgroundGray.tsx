@@ -11,8 +11,43 @@ const BackgroundGray: React.FC<BackgroundGrayProps> = ({
 }) => {
   return (
     <div
-      className={`p-6 sm:p-10 h-auto sm:h-[453px] w-96  md:w-full  max-w-3xl  rounded-3xl bg-[#C7C8C9] 
-        backdrop-blur-lg shadow-lg shadow-stone-500 flex flex-col items-center justify-center text-center ${className}`}
+      className={`
+        relative
+        z-10
+
+        p-6
+        sm:p-10
+
+        h-[400px]
+        sm:h-[453px]
+
+        w-full
+
+        rounded-3xl
+
+        bg-gray-100/20
+        backdrop-blur-lg
+
+        border
+        border-white/10
+
+        shadow-lg
+        shadow-black/40
+
+        flex
+        flex-col
+        items-center
+        justify-start
+
+        pt-24
+        sm:pt-28
+
+        text-center
+
+        overflow-visible
+
+        ${className}
+      `}
     >
       {children}
     </div>

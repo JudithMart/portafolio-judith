@@ -54,7 +54,7 @@ const Projects: React.FC = () => {
             </div>
           </BackgroundGray>
           <div className=" absolute h-12 w-32 bg-[#6C958D] rounded-2xl flex items-center justify-center -translate-y-6  ">
-            <span className="text-gray-300 text-base font-semibold">
+            <span className="text-primary text-base font-semibold">
               PROJECTS
             </span>
           </div>
