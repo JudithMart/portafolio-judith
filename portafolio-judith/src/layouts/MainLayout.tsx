@@ -4,13 +4,36 @@ import Navbar from "./Navbar";
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
-        <div className="min-h-screen relative">
-            {/* Fondo */}
+        <div className="min-h-screen relative overflow-hidden 
+         bg-[#090A0A] ">
             <div
-                className="absolute inset-0 bg-cover bg-center -z-10"
-                style={{ backgroundImage: "url('/fondo/fondo.jpg')" }}
-            />
+  className="
+    absolute
+    -top-40
+    
+    w-[600px]
+    h-[500px]
+    rounded-full
+    bg-[#6C958D]/15
+    blur-[120px]
+    pointer-events-none
+  "
+/>
 
+{/* <div
+  className="
+    absolute
+    bottom-[-200px]
+    right-[-100px]
+    w-[450px]
+    h-[450px]
+    rounded-full
+    bg-[#6C958D]/10
+    blur-[120px]
+    pointer-events-none
+  "
+/> */}
+           
             {/* Navbar siempre arriba */}
             <Navbar />
 
@@ -21,7 +44,7 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
 
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-xl
-             -z-10 text-primary font-medium text-center w-full pb-2">
+             -z-10 text-white font-medium text-center w-full pb-2">
                 By Agui Martínez
             </div>
             {/* Footer fijo abajo */}
@@ -31,3 +54,9 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 };
 
 export default MainLayout;
+
+//   <div
+               // className="absolute inset-0 bg-cover bg-center -z-10"
+                
+               //style={{ backgroundImage: "url('/fondo/fondo.jpg')" }}
+           // />

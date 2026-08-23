@@ -25,14 +25,10 @@ const BackgroundGray: React.FC<BackgroundGrayProps> = ({
 
         rounded-3xl
 
-        bg-gray-100/20
-        backdrop-blur-lg
-
-        border
-        border-white/10
-
-        shadow-lg
-        shadow-black/40
+  bg-white/[0.08]
+backdrop-blur-2xl
+border border-white/[0.14]
+shadow-[0_8px_40px_rgba(0,0,0,0.45)]
 
         flex
         flex-col
@@ -49,7 +45,31 @@ const BackgroundGray: React.FC<BackgroundGrayProps> = ({
         ${className}
       `}
     >
-      {children}
+         {/* Línea animada alrededor de la card */}
+      <svg
+        className="absolute -inset-[3px] w-[calc(100%+6px)] h-[calc(100%+6px)] pointer-events-none"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <rect
+          x="1"
+          y="1"
+          width="98"
+          height="98"
+          rx="5"
+          fill="none"
+          stroke="#8FC9BD"
+          strokeWidth="0.7"
+          strokeLinecap="round"
+          strokeDasharray="40 85"
+          className="animated-border"
+        />
+      </svg>
+
+      {/* Contenido */}
+      <div className="relative z-10">
+        {children}
+      </div>
     </div>
   );
 };

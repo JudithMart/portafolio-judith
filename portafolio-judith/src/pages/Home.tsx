@@ -2,58 +2,45 @@ import React from "react";
 import ArrowLine from "../components/ArrowLine";
 import Button from "../components/Button";
 import BackgroundGray from "../components/BackgroundGray";
+import { TypeAnimation } from "react-type-animation";
 
 const Home: React.FC = () => {
   return (
     <main className="min-h-screen flex items-center justify-center px-4 pt-16">
-      
       <div className="w-full max-w-5xl flex flex-col items-center">
-
         {/* =====================================================
             CONTENEDOR DEL HERO
         ====================================================== */}
 
-        <div className="relative w-full">
-
+        <div className="relative w-full ">
           {/* =================================================
               CARD
           ================================================== */}
 
           <BackgroundGray>
-
-            <h1
-              className="
-                text-gray-200
-                text-3xl
-                sm:text-5xl
-                md:text-6xl
-                font-semibold
-                tracking-wider
-                drop-shadow-lg
-              "
-            >
-              Hi, I´m Agui Martínez
-            </h1>
-
-            <p
-              className="
-                mt-2
-                text-white
-                font-light
-                text-xl
-                sm:text-3xl
-                md:text-4xl
-              "
-            >
-              Frontend Developer
-            </p>
-
-            <div className="mt-4">
-              <ArrowLine />
+            <div className="mt-10 flex flex-col items-center justify-center">
+              <TypeAnimation
+                sequence={["Hi, I´m Agui Martínez", 1000]}
+                wrapper="h1"
+                speed={40}
+                cursor={true}
+                className="
+     text-gray-200 text-3xl sm:text-5xl md:text-6xl font-semibold tracking-wider drop-shadow-lg"
+                repeat={0}
+              />
+              <TypeAnimation
+                sequence={["Frontend Developer", 3000]}
+                wrapper="p"
+                speed={90}
+                cursor={false}
+                className="mt-2 text-white font-light text-xl sm:text-3xl md:text-4xl"
+                repeat={0}
+              />{" "}
+              <div className="mt-4">
+                <ArrowLine />
+              </div>
             </div>
-
           </BackgroundGray>
-
 
           {/* =================================================
               AVATAR
@@ -63,32 +50,24 @@ const Home: React.FC = () => {
             src="/avatarYo/Me7.png"
             alt="Agui Martínez"
             className="
-              absolute
+              fixed
               z-20
-
-              pointer-events-none
-
-              w-64
-              sm:w-72
-              md:w-80
-              lg:w-[380px]
-
+            
+ 
+              w-[400px]
+              2xl:w-[450px]
               h-auto
               object-contain
+              hidden
+              sm:block
+              
+                bottom-0
+               right-[-10px]
+                2xl:right-[150px]
 
-              right-[-25px]
-              sm:right-[-35px]
-              md:right-[-45px]
-              lg:right-[-55px]
-
-              bottom-[-105px]
-              sm:bottom-[-115px]
-              md:bottom-[-125px]
-
-              animate-avatar-float
+       
             "
           />
-
 
           {/* =================================================
               BOTONES
@@ -109,31 +88,17 @@ const Home: React.FC = () => {
               md:gap-16
 
               mt-[-10px]
-              sm:mt-[-8px]
+              sm:mt-[-20px]
             "
           >
+            <Button texto="COURSES" link="link/to/courses" />
 
-            <Button
-              texto="COURSES"
-              link="link/to/courses"
-            />
+            <Button texto="PROJECTS" link="/projects" />
 
-            <Button
-              texto="PROJECTS"
-              link="/projects"
-            />
-
-            <Button
-              texto="TOOLS"
-              link="link/to/tools"
-            />
-
+            <Button texto="TOOLS" link="link/to/tools" />
           </div>
-
         </div>
-
       </div>
-
     </main>
   );
 };
