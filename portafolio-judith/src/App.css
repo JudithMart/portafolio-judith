@@ -1,3 +1,7 @@
+:root {
+  cursor: url("/cursor/paw.png") 10 10, auto;
+}
+
 .animated-border {
   animation: borderMove 7s linear infinite;
   filter: drop-shadow(0 0 3px rgba(108, 149, 141, 0.8));
@@ -13,3 +17,25 @@
   }
 }
 
+.dog-tail-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dog-tail {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .dog-tail-container {
+    width: 100px;
+    height: 100px;
+  }
+}

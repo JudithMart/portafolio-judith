@@ -18,24 +18,24 @@ const BackgroundGray: React.FC<BackgroundGrayProps> = ({
         p-6
         sm:p-10
 
-        h-[400px]
+        h-[300px]
         sm:h-[453px]
 
         w-full
 
         rounded-3xl
 
-  bg-white/[0.08]
-backdrop-blur-2xl
-border border-white/[0.14]
-shadow-[0_8px_40px_rgba(0,0,0,0.45)]
+      bg-white/[0.15]
+        backdrop-blur-2xl
+        border border-white/[0.14]
+        shadow-[0_8px_40px_rgba(0,0,0,0.45)]
 
         flex
         flex-col
         items-center
         justify-start
 
-        pt-24
+        pt-0
         sm:pt-28
 
         text-center
