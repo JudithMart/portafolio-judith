@@ -21,7 +21,7 @@ const BackgroundGray: React.FC<BackgroundGrayProps> = ({
         h-[300px]
         sm:h-[453px]
 
-        w-full
+        max-w-7xl
 
         rounded-3xl
 

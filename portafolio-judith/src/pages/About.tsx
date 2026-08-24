@@ -10,15 +10,15 @@ const About: React.FC = () => {
         <>
 
             <main className="min-h-screen flex items-center justify-center  bg-cover bg-center px-2">
-                <div className="w-full flex flex-col items-center">
+                <div className="w-full flex flex-col items-center justify-center">
                  <BackgroundGray>
-                        <h1 className=" text-xl sm:text-3xl font-medium drop-shadow-lg">
+                        <h1 className=" text-xl sm:text-3xl font-medium drop-shadow-lg text-gray-200">
                             Hi, I´m Agui Judith Martínez Gutiérrez
                         </h1>
-                        <p className="mt-2 sm:mt-2 text-black font-thin text-xl sm:text-xl">
+                        <p className="mt-2 sm:mt-2  font-thin text-xl sm:text-xl text-gray-200">
                             Frontend Developer
                         </p>
-                        <div className="mt-2 sm:mt-2">
+                        <div className="mt-2 sm:mt-2 flex items-center justify-center ">
                             <ArrowLine />
                         </div>
                         {/* Texto informativo sobre mi */}
