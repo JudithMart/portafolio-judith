@@ -7,7 +7,7 @@ import MegaTail from "../components/MegaTail";
 
 const Home: React.FC = () => {
   return (
-    <main className="min-h-screen flex items-center justify-center px-4 pt-16">
+    <section className="min-h-screen flex items-center justify-center px-4 pt-16">
       {/* CONTENEDOR GENERAL DEL HERO */}
       <div
         className="
@@ -22,8 +22,8 @@ const Home: React.FC = () => {
         ================================================== */}
 
         <div className="relative z-10">
-          <BackgroundGray>
-            <div className="mt-10 flex flex-col items-center justify-center">
+          <BackgroundGray className="h-[300px] sm:h-[453px] ">
+            <div className=" flex flex-col items-center justify-center">
               <TypeAnimation
                 sequence={["Hi, I´m Agui Martínez", 1000]}
                 wrapper="h1"
@@ -31,8 +31,8 @@ const Home: React.FC = () => {
                 cursor={true}
                 className="
                   text-gray-200
-                  text-3xl
-                  sm:text-5xl
+                  text-2xl
+                  sm:text-2xl
                   md:text-6xl
                   font-semibold
                   tracking-wider
@@ -210,7 +210,7 @@ const Home: React.FC = () => {
           <Button texto="TOOLS" link="link/to/tools" />
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 
