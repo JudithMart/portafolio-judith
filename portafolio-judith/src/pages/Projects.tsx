@@ -9,45 +9,57 @@ const Projects: React.FC = () => {
     {
       image: "/Projects/BiCitas.png",
       demo: "https://www.bicitashistoricas.com/",
-      title: "BiCitas Históricas",
-      description: "Interactive Map Web Application",
-      github:"https://github.com/JudithMart/BiCiMapa",
+      title: "Intectrative Map Web Aplication ",
+      description: "Tourism web app with an interactive map, geolocation, route calculation, and an administrative dashboard.",
+      github: "https://github.com/JudithMart/BiCiMapa",
+      technologies: ["JavaScript", "React", "Mapbox", "Supabase", "Vite", " Tailwind CSS"],
+      doc: "",
     },
-    
+
     {
       image: "/Projects/ChefPick.png",
       demo: "https://chefpick.vercel.app/",
       title: "ChefPick ",
-      description: "INTELLIGENT RECIPE PLATFORM",
-      github:"https://github.com/JovanyEquihua/recetarioInteligente-",
+      description: "Recipe discovery platform focused on finding recipes based on available ingredients, with a responsive and reusable interface.",
+      github: "https://github.com/JovanyEquihua/recetarioInteligente-",
+      technologies: ["JavaScript", "React", "Node.js", "Tailwind CSS", "Next.js"],
+      doc: "",
     },
     {
       image: "/Projects/GenCode.png",
       demo: "https://gencodetech.com/",
       title: "GenCode Tech",
-      description: "Responsive corporate website development",
-      github:"https://github.com/TadeoRM06/Gencode",
+      description: "Responsive corporate website with reusable components, dynamic service pages, and a Sanity-powered blog.",
+      github: "https://github.com/TadeoRM06/Gencode",
+      technologies: ["JavaScript", "Nuxt.js", "Tailwind CSS", "Vue.js", "Sanity CMS"],
+      doc: "",
     },
     {
       image: "/Projects/Invitacion.png",
       demo: "",
       title: "Wedding Invitation",
-      description: "Template for interactive invitations",
-      github:"https://github.com/JudithMart/invitation-template",
+      description: "Responsive interactive wedding invitation with reusable sections and personalized event information.",
+      github: "https://github.com/JudithMart/invitation-template",
+      technologies: ["JavaScript", "React", "Tailwind CSS"],
+      doc: "",
     },
     {
       image: "/Projects/Pasitos.png",
       demo: "",
       title: "PASITOS” VIDEO GAME",
-      description: "REHABILITATION VIDEO GAME FOR CRIT MORELIA",
-      github:"https://github.com/jdjesusma/RehabilyTecGames",
+      description: "Motor rehabilitation video game developed in Unity and C#, featuring player calibration and motion-based interactions.",
+      github: "https://github.com/jdjesusma/RehabilyTecGames",
+      technologies: ["C#", "Unity"],
+      doc: "/projects/pasitos",
     },
     {
       image: "/Projects/Vuelos.png",
       demo: "",
       title: "FLIGHT SEARCH ENGINE",
-      description: "Web application for searching flights",
-      github:"https://github.com/JudithMart/flight_search_engine",
+      description: "Full-stack flight search application integrating the Amadeus API, with filters, data transformation, and tested backend services.",
+      github: "https://github.com/JudithMart/flight_search_engine",
+      technologies: ["JavaScript", "React", "Node.js", "Express", "Tailwind CSS"],
+      doc: "",
     },
   ];
 
@@ -56,7 +68,7 @@ const Projects: React.FC = () => {
       <section className="min-h-screen flex items-center justify-center ">
         <div className=" relative flex flex-col items-center   ">
           <BackgroundGray className="">
-            <div className="p-6 md:p-14 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3  gap-x-6 md:gap-x-10">
+           <div className="p-6 pb-16 md:pb-20 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4 md:gap-x-10 md:gap-y-8">
               {projects.map((project) => (
                 <ButtonProjects
                   key={project.title}
@@ -65,6 +77,8 @@ const Projects: React.FC = () => {
                   title={project.title}
                   description={project.description}
                   github={project.github}
+                  doc={project.doc}
+                  technologies={project.technologies}
                 />
               ))}
             </div>

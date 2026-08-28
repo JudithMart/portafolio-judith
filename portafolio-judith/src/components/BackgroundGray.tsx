@@ -16,7 +16,7 @@ const BackgroundGray: React.FC<BackgroundGrayProps> = ({
         backdrop-blur-2xl
         border border-white/[0.14]
         shadow-[0_8px_40px_rgba(0,0,0,0.45)]
-        overflow-visible
+        
 
         ${className}
       `}
