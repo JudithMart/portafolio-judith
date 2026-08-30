@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import MainLayout from "./layouts/MainLayout";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
+import ProjectsPasitos from "./pages/Projects_pasitos";
 // import Contact from "./pages/Contact";
 
 const App: React.FC = () => {
@@ -15,6 +16,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/pasitos" element={<ProjectsPasitos />} />
           {/* <Route path="/contact" element={<Contact />} /> */}
         </Routes>
       </MainLayout>

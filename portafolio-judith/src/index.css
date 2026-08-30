@@ -1,3 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+	font-family: "Inter", sans-serif;
+	font-synthesis: none;
+}
+
+#root {
+	min-height: 100vh;
+}
+
+.bg-layer {
+	position: fixed;
+	inset: 0;
+	z-index: -10;
+	overflow: hidden;
+}
+
+.bg-image {
+	width: 110%;
+	height: 110%;
+	margin-left: -5%;
+	margin-top: -5%;
+	object-fit: cover;
+	animation: bg-float 18s ease-in-out infinite;
+	will-change: transform;
+}
+
+@keyframes bg-float {
+	0% {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+	25% {
+		transform: translate3d(-10px, 8px, 0) scale(1.015);
+	}
+	50% {
+		transform: translate3d(8px, -12px, 0) scale(1.03);
+	}
+	75% {
+		transform: translate3d(12px, 6px, 0) scale(1.015);
+	}
+	100% {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+}
+
+@media (max-width: 768px) {
+	.bg-image {
+		width: 120%;
+		height: 120%;
+		margin-left: -10%;
+		margin-top: -10%;
+		animation-duration: 22s;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.bg-image {
+		animation: none;
+		transform: scale(1.03);
+	}
+}

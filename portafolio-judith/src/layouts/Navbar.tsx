@@ -1,72 +1,532 @@
-import React, { useState } from "react";
-import { Menu, X } from "lucide-react"; // iconos del menú hamburguesa
+import React, { useEffect, useState } from "react";
+import { Menu, X, Github, Linkedin } from "lucide-react";
 
 const Navbar: React.FC = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
-    return (
-        <nav className="absolute top-[3px] w-full p-4 rounded-lg z-50">
-            <div className="container mx-auto flex items-center  px-5 sm:px-14 lg:px-40 py-4">
-                {/* Logo/Home */}
-                <a href="/" className="flex items-center">
-                    <img
-                        src="avatarYo/ImgYo.png"
-                        alt="Agui Martínez"
-                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full shadow-lg cursor-pointer hover:scale-110 
-            transition-transform duration-300"
-                    />
-                </a>
+  /*
+  |--------------------------------------------------------------------------
+  | Detectar página / sección activa
+  |--------------------------------------------------------------------------
+  */
 
-                {/* Links en pantallas grandes */}
-                <div className="hidden md:flex flex-col items-center ml-6 mt-6">
-                    <div className="flex space-x-12 text-white font-medium text-xl ">
-                        <a href="/about" className="hover:text-[#6C958D] transition-colors">About me</a>
-                        <a href="#contact" className="hover:text-[#6C958D] transition-colors">Contact</a>
-                        <a href="#resume" className="hover:text-[#6C958D] transition-colors">Resume</a>
-                    </div>
-                    {/* Línea decorativa larga */}
-                    <div className="mt-4 h-[1px] w-[185%] bg-white rounded-full " />
-                </div>
+  useEffect(() => {
+    // Si estamos en /about
+    if (window.location.pathname === "/about") {
+      setActiveSection("about");
+      return;
+    }
 
-                {/* Botón menú hamburguesa (solo móvil) */}
-                <button
-                    className="md:hidden text-white focus:outline-none"
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    {isOpen ? <X size={28} /> : <Menu size={28} />}
-                </button>
-            </div>
+    // Si estamos en la página principal
+    const sections = ["resumen", "contact"]
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
 
-            {/* Menú móvil */}
-            {isOpen && (
-                <div className="md:hidden flex flex-col items-center bg-[#67b1a26e] backdrop-blur-md rounded-lg mx-4 mt-2 py-4 space-y-4
-                 text-white font-medium">
-                    <a
-                        href="#about"
-                        className="hover:text-gray-400 transition-colors"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        About me
-                    </a>
-                    <a
-                        href="#contact"
-                        className="hover:text-gray-400 transition-colors"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        Contact
-                    </a>
-                    <a
-                        href="#resume"
-                        className="hover:text-gray-400 transition-colors"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        Resume
-                    </a>
-                </div>
-            )}
-        </nav>
+    // Si no existen las secciones todavía
+    if (sections.length === 0) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (a, b) =>
+              b.intersectionRatio - a.intersectionRatio
+          );
+
+        if (visibleSections.length > 0) {
+          setActiveSection(
+            visibleSections[0].target.id
+          );
+        }
+      },
+      {
+        threshold: [0.2, 0.4, 0.6, 0.8],
+        rootMargin: "-20% 0px -40% 0px",
+      }
     );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  /*
+  |--------------------------------------------------------------------------
+  | Navegación
+  |--------------------------------------------------------------------------
+  */
+
+  const handleSectionClick = (section: string) => {
+    setActiveSection(section);
+    setIsOpen(false);
+  };
+
+  return (
+    <nav
+      className="
+        fixed
+        top-4
+        left-1/2
+        -translate-x-1/2
+        w-[calc(100%-2rem)]
+        max-w-5xl
+        z-50
+      "
+    >
+      {/* ================================================================
+          NAVBAR
+      ================================================================= */}
+
+      <div
+        className="
+          w-full
+          flex
+          items-center
+          justify-between
+          px-5
+          py-3
+          rounded-2xl
+
+          bg-gray-100/30
+          backdrop-blur-lg
+
+          border
+          border-white/10
+
+          shadow-[0_8px_32px_rgba(0,0,0,0.20)]
+        "
+      >
+        {/* ==============================================================
+            LOGO
+        =============================================================== */}
+
+        <a
+          href="/"
+          className="
+            text-white
+            italic
+            text-xl
+            hover:opacity-70
+            transition-opacity
+          "
+        >
+          Agui{" "}
+          <span className="font-bold text-[#B4CBC1]">
+            ;
+          </span>
+        </a>
+
+        {/* ==============================================================
+            LINKS DESKTOP
+        =============================================================== */}
+
+        <div className="hidden md:flex items-center gap-8">
+
+          {/* ABOUT */}
+
+          <a
+            href="/about"
+            onClick={() => handleSectionClick("about")}
+            className="
+              group
+              relative
+              py-2
+
+              text-white/70
+              text-base
+              tracking-wider
+
+              hover:text-white
+
+              transition-colors
+              duration-300
+            "
+          >
+            About
+
+            {/* Bolita */}
+
+            <span
+              className={`
+                absolute
+                left-1/2
+                -translate-x-1/2
+                -bottom-0.5
+
+                w-2
+                h-2
+                rounded-full
+
+                bg-[#B4CBC1]
+
+                transition-all
+                duration-300
+                ease-out
+
+                ${
+                  activeSection === "about"
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100"
+                }
+              `}
+            />
+          </a>
+
+          {/* RESUME */}
+
+          <a
+            href="#resumen"
+            onClick={() =>
+              handleSectionClick("resumen")
+            }
+            className="
+              group
+              relative
+              py-2
+
+              text-white/70
+              text-base
+              tracking-wider
+
+              hover:text-white
+
+              transition-colors
+              duration-300
+            "
+          >
+            Resume
+
+            {/* Bolita */}
+
+            <span
+              className={`
+                absolute
+                left-1/2
+                -translate-x-1/2
+                -bottom-0.5
+
+                 w-2
+                h-2
+                rounded-full
+
+                bg-[#B4CBC1]
+
+
+                transition-all
+                duration-300
+                ease-out
+
+                ${
+                  activeSection === "resumen"
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100"
+                }
+              `}
+            />
+          </a>
+
+          {/* CONTACT */}
+
+          <a
+            href="#contact"
+            onClick={() =>
+              handleSectionClick("contact")
+            }
+            className="
+              group
+              relative
+              py-2
+
+              text-white/70
+              text-base
+              tracking-wider
+
+              hover:text-white
+
+              transition-colors
+              duration-300
+            "
+          >
+            Contact
+
+            {/* Bolita */}
+
+            <span
+              className={`
+                absolute
+                left-1/2
+                -translate-x-1/2
+                -bottom-0.5
+
+                  w-2
+                h-2
+                rounded-full
+
+                bg-[#B4CBC1]
+
+
+                transition-all
+                duration-300
+                ease-out
+
+                ${
+                  activeSection === "contact"
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100"
+                }
+              `}
+            />
+          </a>
+        </div>
+
+        {/* ==============================================================
+            ACCIONES
+        =============================================================== */}
+
+        <div className="hidden md:flex items-center gap-2">
+
+          {/* GitHub */}
+
+          <a
+            href="#"
+            aria-label="GitHub"
+            className="
+              w-9
+              h-9
+              flex
+              items-center
+              justify-center
+
+              rounded-lg
+
+              bg-white/[0.08]
+              border
+              border-white/[0.08]
+
+              text-black
+
+              hover:bg-white/[0.15]
+              hover:text-white
+
+              hover:-translate-y-0.5
+
+              transition-all
+              duration-300
+            "
+          >
+            <Github size={16} />
+          </a>
+
+          {/* LinkedIn */}
+
+          <a
+            href="#"
+            aria-label="LinkedIn"
+            className="
+              w-9
+              h-9
+              flex
+              items-center
+              justify-center
+
+              rounded-lg
+
+              bg-white/[0.08]
+              border
+              border-white/[0.08]
+
+              text-[#0A66C2]
+
+              hover:bg-white/[0.15]
+              hover:text-white
+
+              hover:-translate-y-0.5
+
+              transition-all
+              duration-300
+            "
+          >
+            <Linkedin size={16} />
+          </a>
+        </div>
+
+        {/* ==============================================================
+            MOBILE BUTTON
+        =============================================================== */}
+
+        <button
+          className="
+            md:hidden
+            text-white
+          "
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={
+            isOpen
+              ? "Cerrar menú"
+              : "Abrir menú"
+          }
+        >
+          {isOpen ? (
+            <X size={24} />
+          ) : (
+            <Menu size={24} />
+          )}
+        </button>
+      </div>
+
+      {/* ================================================================
+          MOBILE MENU
+      ================================================================= */}
+
+      {isOpen && (
+        <div
+          className="
+            md:hidden
+            mt-2
+            p-5
+
+            rounded-2xl
+
+            bg-black/40
+            backdrop-blur-xl
+
+            border
+            border-white/[0.12]
+
+            shadow-[0_8px_32px_rgba(0,0,0,0.25)]
+
+            flex
+            flex-col
+            gap-5
+
+            text-white
+          "
+        >
+          {/* ABOUT */}
+
+          <a
+            href="/about"
+            onClick={() =>
+              handleSectionClick("about")
+            }
+            className="flex items-center justify-between"
+          >
+            <span
+              className={
+                activeSection === "about"
+                  ? "text-white"
+                  : "text-white/70"
+              }
+            >
+              About
+            </span>
+
+            <span
+              className={`
+                w-1.5
+                h-1.5
+                rounded-full
+                bg-secondary
+
+                transition-all
+                duration-300
+
+                ${
+                  activeSection === "about"
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-0"
+                }
+              `}
+            />
+          </a>
+
+          {/* RESUME */}
+
+          <a
+            href="#resumen"
+            onClick={() =>
+              handleSectionClick("resumen")
+            }
+            className="flex items-center justify-between"
+          >
+            <span
+              className={
+                activeSection === "resumen"
+                  ? "text-white"
+                  : "text-white/70"
+              }
+            >
+              Resume
+            </span>
+
+            <span
+              className={`
+                w-1.5
+                h-1.5
+                rounded-full
+                bg-secondary
+
+                transition-all
+                duration-300
+
+                ${
+                  activeSection === "resumen"
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-0"
+                }
+              `}
+            />
+          </a>
+
+          {/* CONTACT */}
+
+          <a
+            href="#contact"
+            onClick={() =>
+              handleSectionClick("contact")
+            }
+            className="flex items-center justify-between"
+          >
+            <span
+              className={
+                activeSection === "contact"
+                  ? "text-white"
+                  : "text-white/70"
+              }
+            >
+              Contact
+            </span>
+
+            <span
+              className={`
+                w-1.5
+                h-1.5
+                rounded-full
+                bg-secondary
+
+                transition-all
+                duration-300
+
+                ${
+                  activeSection === "contact"
+                    ? "opacity-100 scale-100"
+                    : "opacity-0 scale-0"
+                }
+              `}
+            />
+          </a>
+        </div>
+      )}
+    </nav>
+  );
 };
 
 export default Navbar;
-
