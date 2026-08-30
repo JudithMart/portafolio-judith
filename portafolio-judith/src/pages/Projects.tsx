@@ -84,6 +84,12 @@ const Projects: React.FC = () => {
             </div>
           </BackgroundGray>
           <motion.div
+           initial={{ y: 60 }}
+            animate={{ y: -20 }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
             layoutId="projects-button"
             className="z-30 absolute h-8 w-24  md:h-12 md:w-32 bg-[#6C958D] rounded-2xl flex items-center justify-center
             text-white text-sm md:text-base font-semibold shadow-lg "
@@ -114,7 +120,7 @@ const Projects: React.FC = () => {
             w-full
           "
           >
-            <Button texto="COURSES" link="link/to/courses" />
+            <Button texto="COURSES" link="/courses" />
             <Button texto="TOOLS" link="link/to/tools" />
           </div>
         </div>

@@ -203,7 +203,7 @@ const Home: React.FC = () => {
             w-full
           "
         >
-          <Button texto="COURSES" link="link/to/courses" />
+          <Button texto="COURSES" link="/courses" />
 
           <Button texto="PROJECTS" link="/projects" />
 
