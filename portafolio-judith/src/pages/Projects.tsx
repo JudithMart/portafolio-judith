@@ -17,7 +17,7 @@ const Projects: React.FC = () => {
     },
 
     {
-      image: "/Projects/ChefPick.png",
+      image: "/Projects/chefPick.png",
       demo: "https://chefpick.vercel.app/",
       title: "ChefPick ",
       description: "Recipe discovery platform focused on finding recipes based on available ingredients, with a responsive and reusable interface.",

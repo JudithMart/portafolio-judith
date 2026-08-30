@@ -1,6 +1,37 @@
 import React from "react";
+import { motion } from "motion/react";
 
 const Projects_pasitos: React.FC = () => {
+  const fadeUp = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const galleryItem = {
+    hidden: {
+      opacity: 0,
+      y: 15,
+    },
+    visible: (index: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: index * 0.08,
+        ease: "easeOut",
+      },
+    }),
+  };
   return (
     <section className="min-h-screen flex  justify-center pt-44 px-5 md:px-20 ">
       <div
@@ -30,7 +61,14 @@ const Projects_pasitos: React.FC = () => {
             className="animated-border"
           />
         </svg>
-        <div className="max-w-4xl text-center">
+        {/*PROJECT TITLE AND DESCRIPTION*/}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="max-w-4xl text-center"
+        >
           <h1 className="text-gray-200 text-2xl md:text-4xl font-semibold tracking-wider">
             PASITOS — VIDEO GAME
           </h1>
@@ -46,10 +84,16 @@ const Projects_pasitos: React.FC = () => {
           <p className="mt-4 text-[#8FC9BD] text-sm md:text-base font-semibold">
             Unity · C# · Orbbec Astra · Nuitrack
           </p>
-        </div>
+        </motion.div>
 
         {/* HOW IT WORKS */}
-        <div className="max-w-4xl mt-4">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="max-w-4xl mt-4"
+        >
           <h2 className="text-gray-300 text-xl  font-semibold tracking-wider">
             HOW IT WORKS
           </h2>
@@ -58,10 +102,16 @@ const Projects_pasitos: React.FC = () => {
             alt="How It Works"
             className=" w-full "
           />
-        </div>
+        </motion.div>
 
         {/* Video Presentation */}
-        <div className="w-full max-w-4xl mt-2">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="w-full max-w-4xl mt-2"
+        >
           <h2 className="text-gray-300 text-xl  font-semibold tracking-wider">
             PRESENTED AT CRIT MICHOACÁN
           </h2>
@@ -75,9 +125,15 @@ const Projects_pasitos: React.FC = () => {
               Your browser does not support the video tag.
             </video>
           </div>
-        </div>
+        </motion.div>
         {/* MY CONTRIBUTION */}
-        <div className="max-w-4xl mt-10">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="max-w-4xl mt-10"
+        >
           <h2 className="text-gray-300 text-xl  font-semibold tracking-wider">
             MY CONTRIBUTION
           </h2>
@@ -87,7 +143,7 @@ const Projects_pasitos: React.FC = () => {
             behavior, visual assets, and the integration of session-generated
             data with the existing platform.
           </p>
-        </div>
+        </motion.div>
 
         {/* MANUAL */}
         <div className="w-full max-w-4xl mt-10">
@@ -148,11 +204,10 @@ const Projects_pasitos: React.FC = () => {
             Project presentation and testing at CRIT Michoacán.
           </p>
 
-      {/* GALERÍA */}
-<div className="w-full max-w-4xl mt-6">
-
-  <div
-    className="
+          {/* GALERÍA */}
+          <div className="w-full max-w-4xl mt-6">
+            <div
+              className="
       grid
       grid-cols-2
       md:grid-cols-4
@@ -160,22 +215,26 @@ const Projects_pasitos: React.FC = () => {
       auto-rows-[140px]
       md:auto-rows-[150px]
     "
-  >
-
-    {/* FOTO 1 — PRINCIPAL */}
-    <div
-      className="
-        col-span-2
-        row-span-2
-        overflow-hidden
-        rounded-2xl
-        group
-      "
-    >
-      <img
-        src="/Projects/Pasitos/Pasitos1.jpeg"
-        alt="Pasitos presentation at CRIT Michoacán"
-        className="
+            >
+              {/* FOTO 1 — PRINCIPAL */}
+              <motion.div
+                custom={0}
+                variants={galleryItem}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="
+    col-span-2
+    row-span-2
+    overflow-hidden
+    rounded-2xl
+    group
+  "
+              >
+                <img
+                  src="/Projects/Pasitos/Pasitos1.jpeg"
+                  alt="Pasitos presentation at CRIT Michoacán"
+                  className="
           w-full
           h-full
           object-cover
@@ -183,24 +242,28 @@ const Projects_pasitos: React.FC = () => {
           duration-500
           group-hover:scale-105
         "
-      />
-    </div>
+                />
+              </motion.div>
 
-
-    {/* FOTO 2 */}
-    <div
-      className="
+              {/* FOTO 2 */}
+              <motion.div
+                custom={1}
+                variants={galleryItem}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="
         col-span-1
         row-span-1
         overflow-hidden
         rounded-2xl
         group
       "
-    >
-      <img
-        src="/Projects/Pasitos/Pasitos2.jpeg"
-        alt="Pasitos"
-        className="
+              >
+                <img
+                  src="/Projects/Pasitos/Pasitos2.jpeg"
+                  alt="Pasitos"
+                  className="
           w-full
           h-full
           object-cover
@@ -208,24 +271,28 @@ const Projects_pasitos: React.FC = () => {
           duration-500
           group-hover:scale-105
         "
-      />
-    </div>
+                />
+              </motion.div>
 
-
-    {/* FOTO 3 */}
-    <div
-      className="
-        col-span-1
-        row-span-1
-        overflow-hidden
-        rounded-2xl
-        group
-      "
-    >
-      <img
-        src="/Projects/Pasitos/Pasitos3.jpeg"
-        alt="Pasitos project"
-        className="
+              {/* FOTO 3 */}
+              <motion.div
+                custom={2}
+                variants={galleryItem}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="
+    col-span-1
+    row-span-1
+    overflow-hidden
+    rounded-2xl
+    group
+  "
+              >
+                <img
+                  src="/Projects/Pasitos/Pasitos3.jpeg"
+                  alt="Pasitos project"
+                  className="
           w-full
           h-full
           object-cover
@@ -233,24 +300,28 @@ const Projects_pasitos: React.FC = () => {
           duration-500
           group-hover:scale-105
         "
-      />
-    </div>
+                />
+              </motion.div>
 
-
-    {/* FOTO 4 */}
-    <div
-      className="
-        col-span-1
-        row-span-1
-        overflow-hidden
-        rounded-2xl
-        group
-      "
-    >
-      <img
-        src="/Projects/Pasitos/Pasitos4.jpeg"
-        alt="Pasitos project presentation"
-        className="
+              {/* FOTO 4 */}
+              <motion.div
+                custom={3}
+                variants={galleryItem}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="
+    col-span-1
+    row-span-1
+    overflow-hidden
+    rounded-2xl
+    group
+  "
+              >
+                <img
+                  src="/Projects/Pasitos/Pasitos4.jpeg"
+                  alt="Pasitos project presentation"
+                  className="
           w-full
           h-full
           object-cover
@@ -258,24 +329,28 @@ const Projects_pasitos: React.FC = () => {
           duration-500
           group-hover:scale-105
         "
-      />
-    </div>
+                />
+              </motion.div>
 
-
-    {/* FOTO 5 */}
-    <div
-      className="
-        col-span-1
-        row-span-1
-        overflow-hidden
-        rounded-2xl
-        group
-      "
-    >
-      <img
-        src="/Projects/Pasitos/Pasitos5.jpeg"
-        alt="Pasitos"
-        className="
+              {/* FOTO 5 */}
+              <motion.div
+                custom={4}
+                variants={galleryItem}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="
+    col-span-1
+    row-span-1
+    overflow-hidden
+    rounded-2xl
+    group
+  "
+              >
+                <img
+                  src="/Projects/Pasitos/Pasitos5.jpeg"
+                  alt="Pasitos"
+                  className="
           w-full
           h-full
           object-cover
@@ -283,12 +358,10 @@ const Projects_pasitos: React.FC = () => {
           duration-500
           group-hover:scale-105
         "
-      />
-    </div>
-
-  </div>
-
-</div>
+                />
+              </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
