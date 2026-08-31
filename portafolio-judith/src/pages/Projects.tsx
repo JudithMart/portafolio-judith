@@ -121,7 +121,7 @@ const Projects: React.FC = () => {
           "
           >
             <Button texto="COURSES" link="/courses" />
-            <Button texto="TOOLS" link="link/to/tools" />
+            <Button texto="TOOLS" link="/tools" />
           </div>
         </div>
       </section>

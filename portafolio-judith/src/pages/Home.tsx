@@ -207,7 +207,7 @@ const Home: React.FC = () => {
 
           <Button texto="PROJECTS" link="/projects" />
 
-          <Button texto="TOOLS" link="link/to/tools" />
+          <Button texto="TOOLS" link="/tools" />
         </div>
       </div>
     </section>

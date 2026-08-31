@@ -82,7 +82,7 @@ const Courses: React.FC = () => {
           md:w-32"
             />
             <Button texto="PROJECTS" link="/projects" />
-            <Button texto="TOOLS" link="link/to/tools" />
+            <Button texto="TOOLS" link="/tools" />
           </div>
         </div>
       </section>
