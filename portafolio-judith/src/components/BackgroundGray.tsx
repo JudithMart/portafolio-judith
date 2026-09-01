@@ -11,12 +11,11 @@ const BackgroundGray: React.FC<BackgroundGrayProps> = ({
 }) => {
   return (
     <div
-      className={` relative z-10  flex justify-center items-center max-w-7xl rounded-3xl 
+      className={` relative flex justify-center items-center max-w-7xl rounded-3xl overflow-visible
         bg-white/[0.15]
         backdrop-blur-2xl
         border border-white/[0.14]
         shadow-[0_8px_40px_rgba(0,0,0,0.45)]
-        
 
         ${className}
       `}
@@ -43,7 +42,7 @@ const BackgroundGray: React.FC<BackgroundGrayProps> = ({
       </svg>
 
       {/* Contenido */}
-      <div className="relative z-10">
+      <div className="relative ">
         {children}
       </div>
     </div>

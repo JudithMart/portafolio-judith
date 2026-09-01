@@ -65,8 +65,8 @@ const Projects: React.FC = () => {
 
   return (
     <>
-      <section className="min-h-screen flex items-center justify-center ">
-        <div className=" relative flex flex-col items-center   ">
+      <section className="pt-20 md:pt-44 flex items-center justify-center ">
+        <div className=" relative flex flex-col items-center ">
           <BackgroundGray className="">
            <div className="p-6 pb-16 md:pb-20 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4 md:gap-x-10 md:gap-y-8">
               {projects.map((project) => (

@@ -22,7 +22,7 @@ const Courses: React.FC = () => {
 
   return (
     <>
-      <section className="min-h-screen flex items-center justify-center ">
+      <section className="pt-20 md:pt-44 flex items-center justify-center ">
         <div className=" relative flex flex-col    ">
           <BackgroundGray className="">
             <div className="mt-4 p-6 pb-20 md:pb-32 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 ">
