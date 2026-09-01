@@ -32,21 +32,16 @@ const Navbar: React.FC = () => {
       (entries) => {
         const visibleSections = entries
           .filter((entry) => entry.isIntersecting)
-          .sort(
-            (a, b) =>
-              b.intersectionRatio - a.intersectionRatio
-          );
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
 
         if (visibleSections.length > 0) {
-          setActiveSection(
-            visibleSections[0].target.id
-          );
+          setActiveSection(visibleSections[0].target.id);
         }
       },
       {
         threshold: [0.2, 0.4, 0.6, 0.8],
         rootMargin: "-20% 0px -40% 0px",
-      }
+      },
     );
 
     sections.forEach((section) => {
@@ -70,58 +65,17 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav
-      className="
-        fixed
-        top-4
-        left-1/2
-        -translate-x-1/2
-        w-[calc(100%-2rem)]
-        max-w-5xl
-        z-50
-      "
-    >
+    <nav className=" fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-5xl z-50 ">
       {/* ================================================================
           NAVBAR
       ================================================================= */}
 
-      <div
-        className="
-          w-full
-          flex
-          items-center
-          justify-between
-          px-5
-          py-3
-          rounded-2xl
-
-          bg-gray-100/30
-          backdrop-blur-lg
-
-          border
-          border-white/10
-
-          shadow-[0_8px_32px_rgba(0,0,0,0.20)]
-        "
-      >
-        {/* ==============================================================
-            LOGO
-        =============================================================== */}
-
+      <div className=" w-full flex items-center justify-between px-5 py-3 rounded-2xl bg-gray-100/30 backdrop-blur-lg border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.20)]  ">
         <a
           href="/"
-          className="
-            text-white
-            italic
-            text-xl
-            hover:opacity-70
-            transition-opacity
-          "
+          className=" text-white italic text-xl hover:opacity-70 transition-opacity"
         >
-          Agui{" "}
-          <span className="font-bold text-[#B4CBC1]">
-            ;
-          </span>
+          Agui <span className="font-bold text-[#B4CBC1]">;</span>
         </a>
 
         {/* ==============================================================
@@ -129,48 +83,16 @@ const Navbar: React.FC = () => {
         =============================================================== */}
 
         <div className="hidden md:flex items-center gap-8">
-
           {/* ABOUT */}
 
           <a
             href="/about"
             onClick={() => handleSectionClick("about")}
-            className="
-              group
-              relative
-              py-2
-
-              text-white/70
-              text-base
-              tracking-wider
-
-              hover:text-white
-
-              transition-colors
-              duration-300
-            "
+            className="group relative py-2 text-white/70 text-base tracking-wider hover:text-white transition-colors duration-300"
           >
             About
-
             {/* Bolita */}
-
-            <span
-              className={`
-                absolute
-                left-1/2
-                -translate-x-1/2
-                -bottom-0.5
-
-                w-2
-                h-2
-                rounded-full
-
-                bg-[#B4CBC1]
-
-                transition-all
-                duration-300
-                ease-out
-
+            <span className={` absolute left-1/2 -translate-x-1/2 -bottom-0.5 w-2 h-2 rounded-full bg-[#B4CBC1]  transition-all duration-300 ease-out
                 ${
                   activeSection === "about"
                     ? "opacity-100 scale-100"
@@ -183,10 +105,8 @@ const Navbar: React.FC = () => {
           {/* RESUME */}
 
           <a
-            href="#resumen"
-            onClick={() =>
-              handleSectionClick("resumen")
-            }
+            href="/resumen"
+            onClick={() => handleSectionClick("resumen")}
             className="
               group
               relative
@@ -203,9 +123,7 @@ const Navbar: React.FC = () => {
             "
           >
             Resume
-
             {/* Bolita */}
-
             <span
               className={`
                 absolute
@@ -237,9 +155,7 @@ const Navbar: React.FC = () => {
 
           <a
             href="#contact"
-            onClick={() =>
-              handleSectionClick("contact")
-            }
+            onClick={() => handleSectionClick("contact")}
             className="
               group
               relative
@@ -256,9 +172,7 @@ const Navbar: React.FC = () => {
             "
           >
             Contact
-
             {/* Bolita */}
-
             <span
               className={`
                 absolute
@@ -292,7 +206,6 @@ const Navbar: React.FC = () => {
         =============================================================== */}
 
         <div className="hidden md:flex items-center gap-2">
-
           {/* GitHub */}
 
           <a
@@ -368,17 +281,9 @@ const Navbar: React.FC = () => {
             text-white
           "
           onClick={() => setIsOpen(!isOpen)}
-          aria-label={
-            isOpen
-              ? "Cerrar menú"
-              : "Abrir menú"
-          }
+          aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
         >
-          {isOpen ? (
-            <X size={24} />
-          ) : (
-            <Menu size={24} />
-          )}
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
@@ -414,16 +319,12 @@ const Navbar: React.FC = () => {
 
           <a
             href="/about"
-            onClick={() =>
-              handleSectionClick("about")
-            }
+            onClick={() => handleSectionClick("about")}
             className="flex items-center justify-between"
           >
             <span
               className={
-                activeSection === "about"
-                  ? "text-white"
-                  : "text-white/70"
+                activeSection === "about" ? "text-white" : "text-white/70"
               }
             >
               About
@@ -452,16 +353,12 @@ const Navbar: React.FC = () => {
 
           <a
             href="#resumen"
-            onClick={() =>
-              handleSectionClick("resumen")
-            }
+            onClick={() => handleSectionClick("resumen")}
             className="flex items-center justify-between"
           >
             <span
               className={
-                activeSection === "resumen"
-                  ? "text-white"
-                  : "text-white/70"
+                activeSection === "resumen" ? "text-white" : "text-white/70"
               }
             >
               Resume
@@ -490,16 +387,12 @@ const Navbar: React.FC = () => {
 
           <a
             href="#contact"
-            onClick={() =>
-              handleSectionClick("contact")
-            }
+            onClick={() => handleSectionClick("contact")}
             className="flex items-center justify-between"
           >
             <span
               className={
-                activeSection === "contact"
-                  ? "text-white"
-                  : "text-white/70"
+                activeSection === "contact" ? "text-white" : "text-white/70"
               }
             >
               Contact

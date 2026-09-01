@@ -17,9 +17,6 @@ const Home: React.FC = () => {
           min-h-[520px]
         "
       >
-        {/* =================================================
-            CARD
-        ================================================== */}
 
         <div className="relative z-10">
           <BackgroundGray className="h-[300px] sm:h-[453px] ">
