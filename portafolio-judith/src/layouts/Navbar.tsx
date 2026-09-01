@@ -5,21 +5,26 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
-  /*
-  |--------------------------------------------------------------------------
-  | Detectar página / sección activa
-  |--------------------------------------------------------------------------
-  */
-
   useEffect(() => {
-    // Si estamos en /about
-    if (window.location.pathname === "/about") {
+    const pathname = window.location.pathname;
+
+    if (pathname === "/about") {
       setActiveSection("about");
       return;
     }
 
+    if (pathname === "/resume") {
+      setActiveSection("resume");
+      return;
+    }
+
+    if (pathname === "/") {
+      setActiveSection("");
+      return;
+    }
+
     // Si estamos en la página principal
-    const sections = ["resumen", "contact"]
+    const sections = ["resume", "contact"]
       .map((id) => document.getElementById(id))
       .filter(Boolean) as HTMLElement[];
 
@@ -92,7 +97,8 @@ const Navbar: React.FC = () => {
           >
             About
             {/* Bolita */}
-            <span className={` absolute left-1/2 -translate-x-1/2 -bottom-0.5 w-2 h-2 rounded-full bg-[#B4CBC1]  transition-all duration-300 ease-out
+            <span
+              className={` absolute left-1/2 -translate-x-1/2 -bottom-0.5 w-2 h-2 rounded-full bg-[#B4CBC1]  transition-all duration-300 ease-out
                 ${
                   activeSection === "about"
                     ? "opacity-100 scale-100"
@@ -105,45 +111,16 @@ const Navbar: React.FC = () => {
           {/* RESUME */}
 
           <a
-            href="/resumen"
-            onClick={() => handleSectionClick("resumen")}
-            className="
-              group
-              relative
-              py-2
-
-              text-white/70
-              text-base
-              tracking-wider
-
-              hover:text-white
-
-              transition-colors
-              duration-300
-            "
+            href="/resume"
+            onClick={() => handleSectionClick("resume")}
+            className=" group relative py-2 text-white/70 text-base tracking-wider hover:text-white transition-colors duration-300"
           >
             Resume
             {/* Bolita */}
             <span
-              className={`
-                absolute
-                left-1/2
-                -translate-x-1/2
-                -bottom-0.5
-
-                 w-2
-                h-2
-                rounded-full
-
-                bg-[#B4CBC1]
-
-
-                transition-all
-                duration-300
-                ease-out
-
+              className={` absolute left-1/2 -translate-x-1/2 -bottom-0.5 w-2 h-2 rounded-full bg-[#B4CBC1] transition-all duration-30  ease-out
                 ${
-                  activeSection === "resumen"
+                  activeSection === "resume"
                     ? "opacity-100 scale-100"
                     : "opacity-0 scale-0 group-hover:opacity-100 group-hover:scale-100"
                 }
@@ -331,15 +308,7 @@ const Navbar: React.FC = () => {
             </span>
 
             <span
-              className={`
-                w-1.5
-                h-1.5
-                rounded-full
-                bg-secondary
-
-                transition-all
-                duration-300
-
+              className={` w-1.5 h-1.5 rounded-full bg-secondary  transition-all duration-300
                 ${
                   activeSection === "about"
                     ? "opacity-100 scale-100"
@@ -352,30 +321,22 @@ const Navbar: React.FC = () => {
           {/* RESUME */}
 
           <a
-            href="#resumen"
-            onClick={() => handleSectionClick("resumen")}
+            href="/resume"
+            onClick={() => handleSectionClick("resume")}
             className="flex items-center justify-between"
           >
             <span
               className={
-                activeSection === "resumen" ? "text-white" : "text-white/70"
+                activeSection === "resume" ? "text-white" : "text-white/70"
               }
             >
               Resume
             </span>
 
             <span
-              className={`
-                w-1.5
-                h-1.5
-                rounded-full
-                bg-secondary
-
-                transition-all
-                duration-300
-
+              className={` w-1.5 h-1.5 rounded-full bg-secondary transition-all duration-300
                 ${
-                  activeSection === "resumen"
+                  activeSection === "resume"
                     ? "opacity-100 scale-100"
                     : "opacity-0 scale-0"
                 }
