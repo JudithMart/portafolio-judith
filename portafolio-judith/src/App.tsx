@@ -10,6 +10,7 @@ import ProjectsPasitos from "./pages/Projects_pasitos";
 import Courses from "./pages/Courses";
 import Tools from "./pages/Tools";
 import Resume from "./pages/Resume";
+import Contact from "./pages/Contact";
 // import Contact from "./pages/Contact";
 
 const App: React.FC = () => {
@@ -26,6 +27,7 @@ const App: React.FC = () => {
             <Route path="/courses" element={<Courses />} />
             <Route path="/tools" element={<Tools />} />
             <Route path="/resume" element={<Resume />} />
+            <Route path="/contact" element={<Contact />} />
             {/* <Route path="/contact" element={<Contact />} /> */}
           </Routes>
         </MainLayout>

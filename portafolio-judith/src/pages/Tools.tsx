@@ -133,7 +133,7 @@ const Tools: React.FC = () => {
   ];
 
   return (
-    <section className=" flex items-center justify-center  pt-20 md:pt-44 px-5 md:px-20 ">
+    <section className="flex items-center justify-center px-4 pt-36 md:pt-32 pb-28">
       <div className="relative flex flex-col items-center ">
         <BackgroundGray>
           <div className="relative ">
@@ -193,6 +193,7 @@ const Tools: React.FC = () => {
             duration: 0.6,
             ease: "easeOut",
           }}
+         
           className=" z-20 absolute h-8 w-24 md:h-12 md:w-32 bg-[#6C958D] rounded-2xl
 
             flex

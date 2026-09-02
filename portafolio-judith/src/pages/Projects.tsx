@@ -65,8 +65,8 @@ const Projects: React.FC = () => {
 
   return (
     <>
-      <section className="pt-20 md:pt-44 flex items-center justify-center ">
-        <div className=" relative flex flex-col items-center ">
+      <section className="pt-36 md:pt-32 pb-28 flex items-center justify-center">
+        <div className="relative  flex flex-col items-center ">
           <BackgroundGray className="">
            <div className="p-6 pb-16 md:pb-20 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-4 md:gap-x-10 md:gap-y-8">
               {projects.map((project) => (
@@ -90,7 +90,7 @@ const Projects: React.FC = () => {
               duration: 0.6,
               ease: "easeOut",
             }}
-            layoutId="projects-button"
+            
             className="z-30 absolute h-8 w-24  md:h-12 md:w-32 bg-[#6C958D] rounded-2xl flex items-center justify-center
             text-white text-sm md:text-base font-semibold shadow-lg "
           >

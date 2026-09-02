@@ -7,7 +7,7 @@ import MegaTail from "../components/MegaTail";
 
 const Home: React.FC = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 pt-16">
+    <section className="flex items-center justify-center px-4 pt-36 md:pt-36 pb-28">
       {/* CONTENEDOR GENERAL DEL HERO */}
       <div
         className="

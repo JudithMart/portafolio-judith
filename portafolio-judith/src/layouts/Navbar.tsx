@@ -18,8 +18,8 @@ const Navbar: React.FC = () => {
       return;
     }
 
-    if (pathname === "/") {
-      setActiveSection("");
+    if (pathname === "/contact") {
+      setActiveSection("contact");
       return;
     }
 
@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className=" fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-5xl z-50 ">
+    <nav className="  fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-5xl z-50 ">
       {/* ================================================================
           NAVBAR
       ================================================================= */}
@@ -131,42 +131,14 @@ const Navbar: React.FC = () => {
           {/* CONTACT */}
 
           <a
-            href="#contact"
+            href="/contact"
             onClick={() => handleSectionClick("contact")}
-            className="
-              group
-              relative
-              py-2
-
-              text-white/70
-              text-base
-              tracking-wider
-
-              hover:text-white
-
-              transition-colors
-              duration-300
-            "
+            className=" group relative py-2 text-white/70 text-base tracking-wider hover:text-white transition-colors  duration-300 "
           >
             Contact
             {/* Bolita */}
             <span
-              className={`
-                absolute
-                left-1/2
-                -translate-x-1/2
-                -bottom-0.5
-
-                  w-2
-                h-2
-                rounded-full
-
-                bg-[#B4CBC1]
-
-
-                transition-all
-                duration-300
-                ease-out
+              className={`  absolute  left-1/2  -translate-x-1/2  -bottom-0.5 w-2  h-2 rounded-full bg-[#B4CBC1] transition-all  duration-300  ease-out
 
                 ${
                   activeSection === "contact"
@@ -186,31 +158,10 @@ const Navbar: React.FC = () => {
           {/* GitHub */}
 
           <a
-            href="#"
+            href="https://github.com/JudithMart"
             aria-label="GitHub"
-            className="
-              w-9
-              h-9
-              flex
-              items-center
-              justify-center
-
-              rounded-lg
-
-              bg-white/[0.08]
-              border
-              border-white/[0.08]
-
-              text-black
-
-              hover:bg-white/[0.15]
-              hover:text-white
-
-              hover:-translate-y-0.5
-
-              transition-all
-              duration-300
-            "
+            className=" w-9 h-9 flex items-center justify-center rounded-lg bg-white/[0.08] border border-white/[0.08] text-black
+             hover:bg-white/[0.15] hover:text-white  hover:-translate-y-0.5 transition-all duration-300"
           >
             <Github size={16} />
           </a>
@@ -218,31 +169,10 @@ const Navbar: React.FC = () => {
           {/* LinkedIn */}
 
           <a
-            href="#"
+            href="https://www.linkedin.com/in/aguimartinezg"
             aria-label="LinkedIn"
-            className="
-              w-9
-              h-9
-              flex
-              items-center
-              justify-center
-
-              rounded-lg
-
-              bg-white/[0.08]
-              border
-              border-white/[0.08]
-
-              text-[#0A66C2]
-
-              hover:bg-white/[0.15]
-              hover:text-white
-
-              hover:-translate-y-0.5
-
-              transition-all
-              duration-300
-            "
+            className=" w-9 h-9  flex items-center justify-center rounded-lg bg-white/[0.08] border border-white/[0.08] text-[#0A66C2]
+              hover:bg-white/[0.15] hover:text-white hover:-translate-y-0.5 transition-all duration-300"
           >
             <Linkedin size={16} />
           </a>
@@ -253,10 +183,7 @@ const Navbar: React.FC = () => {
         =============================================================== */}
 
         <button
-          className="
-            md:hidden
-            text-white
-          "
+          className=" md:hidden text-white"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
         >
@@ -270,27 +197,8 @@ const Navbar: React.FC = () => {
 
       {isOpen && (
         <div
-          className="
-            md:hidden
-            mt-2
-            p-5
-
-            rounded-2xl
-
-            bg-black/40
-            backdrop-blur-xl
-
-            border
-            border-white/[0.12]
-
-            shadow-[0_8px_32px_rgba(0,0,0,0.25)]
-
-            flex
-            flex-col
-            gap-5
-
-            text-white
-          "
+          className=" md:hidden mt-2 p-5 rounded-2xl bg-black/40  backdrop-blur-xl border border-white/[0.12] shadow-[0_8px_32px_rgba(0,0,0,0.25)]
+           flex flex-col gap-5 text-white "
         >
           {/* ABOUT */}
 
@@ -301,14 +209,13 @@ const Navbar: React.FC = () => {
           >
             <span
               className={
-                activeSection === "about" ? "text-white" : "text-white/70"
+                activeSection === "about" ? "text-white " : "text-white/70"
               }
             >
               About
             </span>
-
             <span
-              className={` w-1.5 h-1.5 rounded-full bg-secondary  transition-all duration-300
+              className={` w-3 h-3 rounded-full bg-secondary  transition-all duration-300
                 ${
                   activeSection === "about"
                     ? "opacity-100 scale-100"
@@ -334,7 +241,7 @@ const Navbar: React.FC = () => {
             </span>
 
             <span
-              className={` w-1.5 h-1.5 rounded-full bg-secondary transition-all duration-300
+              className={` w-3 h-3 rounded-full bg-secondary transition-all duration-300
                 ${
                   activeSection === "resume"
                     ? "opacity-100 scale-100"
@@ -347,7 +254,7 @@ const Navbar: React.FC = () => {
           {/* CONTACT */}
 
           <a
-            href="#contact"
+            href="/contact"
             onClick={() => handleSectionClick("contact")}
             className="flex items-center justify-between"
           >
@@ -360,16 +267,8 @@ const Navbar: React.FC = () => {
             </span>
 
             <span
-              className={`
-                w-1.5
-                h-1.5
-                rounded-full
-                bg-secondary
-
-                transition-all
-                duration-300
-
-                ${
+              className={`  w-3 h-3 rounded-full bg-secondary transition-all duration-300
+               ${
                   activeSection === "contact"
                     ? "opacity-100 scale-100"
                     : "opacity-0 scale-0"

@@ -11,7 +11,7 @@ const About: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="pt-20 md:pt-44 flex items-center justify-center bg-cover bg-center"
+        className="pt-32 pb-28 md:pt-44 flex items-center justify-center bg-cover bg-center"
       >
         <div className="w-full max-w-5xl relative flex flex-col items-center justify-center px-4 md:px-0">
           <BackgroundGray>

@@ -1,40 +1,11 @@
 import React from "react";
-import { motion } from "motion/react";
+
 import Project_Pasitos from "../components/Project_Pasitos";
 
 const Projects_pasitos: React.FC = () => {
-  const fadeUp = {
-    hidden: {
-      opacity: 0,
-      y: 20,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
 
-  const galleryItem = {
-    hidden: {
-      opacity: 0,
-      y: 15,
-    },
-    visible: (index: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        delay: index * 0.08,
-        ease: "easeOut",
-      },
-    }),
-  };
   return (
-    <section className="min-h-screen flex  justify-center pt-44 px-5 md:px-20 ">
+    <section className=" flex  justify-center px-5 pt-36 md:pt-32 pb-32">
       <div
         className="relative z-10  flex max-w-7xl rounded-3xl flex-col
         bg-white/[0.15] h-full 

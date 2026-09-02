@@ -13,7 +13,7 @@ const Resume: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="pt-20 md:pt-32 pb-32 px-4"
+      className="pt-36 md:pt-32 pb-32 px-4"
     >
       <div className="w-full max-w-5xl mx-auto relative">
         <BackgroundGray>
