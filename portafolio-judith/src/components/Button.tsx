@@ -11,7 +11,7 @@ const Button: React.FC<ButtonProps> = ({ texto, link }) => {
   return (
     <Link to={link}>
       <motion.button
-        layoutId={texto === "PROJECTS" ? "projects-button" : undefined}
+       
         whileHover={{
           scale: 1.08,
           y: -2,

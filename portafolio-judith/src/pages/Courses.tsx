@@ -22,7 +22,7 @@ const Courses: React.FC = () => {
 
   return (
     <>
-      <section className="pt-20 md:pt-44 flex items-center justify-center ">
+      <section className="pt-36 md:pt-32 pb-28 flex items-center justify-center">
         <div className=" relative flex flex-col    ">
           <BackgroundGray className="">
             <div className="mt-4 p-6 pb-20 md:pb-32 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 ">
@@ -44,7 +44,7 @@ const Courses: React.FC = () => {
               duration: 0.6,
               ease: "easeOut",
             }}
-            layoutId="course-button"
+          
             className="z-30 absolute h-8 w-24  md:h-12 md:w-32 bg-[#6C958D] rounded-2xl flex items-center justify-center
             text-white text-sm md:text-base font-semibold shadow-lg md:left-60 left-2
  "
