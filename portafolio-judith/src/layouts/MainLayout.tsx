@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 // import Footer from "./Footer";
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -13,13 +14,13 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <Navbar />
 
       {/* Contenido de la página */}
-      <main className="relative z-10 pb-24">{children}</main>
+      <main className="relative z-10 ">{children}</main>
 
-      <div className="absolute bottom-0 left-0 right-0 z-20 py-6 text-center text-sm text-gray-200 font-medium">
+      {/* <div className="absolute bottom-0 left-0 right-0 z-20 py-6 text-center text-sm text-gray-200 font-medium">
         <p>By Agui Martínez</p>
-      </div>
-      {/* Footer fijo abajo */}
-      {/* <Footer /> */}
+      </div> */}
+      <Footer />
+  
     </div>
   );
 };
