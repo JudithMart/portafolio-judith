@@ -18,18 +18,19 @@ const DogBlink: React.FC<DogBlinkProps> = ({
     let blinkTimer: ReturnType<typeof setTimeout>;
 
     const scheduleBlink = () => {
-      // Tiempo normal con los ojos abiertos
-      blinkTimer = setTimeout(() => {
-        setEyesClosed(true);
+   
+      blinkTimer = setTimeout(
+        () => {
+          setEyesClosed(true);
 
-        // Mantiene los ojos cerrados unos milisegundos
-        blinkTimer = setTimeout(() => {
-          setEyesClosed(false);
+          blinkTimer = setTimeout(() => {
+            setEyesClosed(false);
 
-          // Volvemos a programar otro parpadeo
-          scheduleBlink();
-        }, 100);
-      }, 3500 + Math.random() * 2500);
+            scheduleBlink();
+          }, 100);
+        },
+        3500 + Math.random() * 2500,
+      );
     };
 
     scheduleBlink();
@@ -40,17 +41,7 @@ const DogBlink: React.FC<DogBlinkProps> = ({
   }, []);
 
   return (
-    <motion.div
-      className={`relative ${className}`}
-    //   animate={{
-    //     y: [0, -2, 0],
-    //   }}
-    //   transition={{
-    //     duration: 3,
-    //     repeat: Infinity,
-    //     ease: "easeInOut",
-    //   }}
-    >
+    <motion.div className={`relative ${className}`}>
       <img
         src={openImage}
         alt=""
