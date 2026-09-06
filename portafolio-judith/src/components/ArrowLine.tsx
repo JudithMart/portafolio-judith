@@ -1,14 +1,10 @@
 import type React from "react";
 
-interface ArrowLineProps {
-
-
-}
 
 
 
 
-const ArrowLine: React.FC<ArrowLineProps> = () => (
+const ArrowLine: React.FC = () => (
     <div className="flex items-center w-full">
         <div className={`h-1 w-48 sm:w-80 md:w-[400px] bg-secondary rounded-full flex items-center relative transition-all`}>
             {/* Flecha izquierda */}
