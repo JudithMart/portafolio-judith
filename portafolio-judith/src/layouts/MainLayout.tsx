@@ -1,33 +1,22 @@
 import React from "react";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 // import Footer from "./Footer";
 
 const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    return (
-        <div className="min-h-screen relative">
-            {/* Fondo */}
-            <div
-                className="absolute inset-0 bg-cover bg-center -z-10"
-                style={{ backgroundImage: "url('/fondo/fondo.jpg')" }}
-            />
+  return (
+    <div className="min-h-screen relative bg-[#090A0A] overflow-x-hidden">
+      <div className="absolute -top-40 w-[600px] h-[500px] rounded-full bg-[#6C958D]/20 blur-[120px] pointer-events-none" />
 
-            {/* Navbar siempre arriba */}
-            <Navbar />
+      <div className="absolute right-0 bottom-4 w-[600px] h-[500px] rounded-full bg-[#6C958D]/20 blur-[120px] pointer-events-none" />
 
-            {/* Contenido de la página */}
-            <main className="pt-20">
-                {children}
-            </main>
+      <Navbar />
 
+      <main className="relative z-10 ">{children}</main>
 
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 text-xl
-             -z-10 text-white font-medium text-center w-full pb-2">
-                By Agui Martínez
-            </div>
-            {/* Footer fijo abajo */}
-            {/* <Footer /> */}
-        </div>
-    );
+      <Footer />
+    </div>
+  );
 };
 
 export default MainLayout;
