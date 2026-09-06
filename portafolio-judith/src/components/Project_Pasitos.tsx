@@ -1,8 +1,8 @@
 import React from "react";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 
 const Project_pasitos: React.FC = () => {
-  const scrollReveal = {
+  const scrollReveal: Variants = {
     hidden: {
       opacity: 0,
       y: 32,
@@ -17,7 +17,7 @@ const Project_pasitos: React.FC = () => {
     },
   };
 
-  const galleryItem = {
+  const galleryItem: Variants = {
     hidden: {
       opacity: 0,
       y: 24,
@@ -121,17 +121,8 @@ const Project_pasitos: React.FC = () => {
         </h2>
 
         <div
-          className="
-      mt-5
-      flex flex-col md:flex-row
-      items-center
-      justify-between
-      gap-5
-      p-6
-      rounded-2xl
-      bg-white/10
-      border border-white/10
-    "
+          className=" mt-5  flex flex-col md:flex-row  items-center justify-between gap-5 p-6 rounded-2xl
+      bg-white/10 border border-white/10"
         >
           <div>
             <h3 className="text-white font-semibold">Pasitos — User Manual</h3>
@@ -145,16 +136,7 @@ const Project_pasitos: React.FC = () => {
             href="/Projects/Pasitos/manualPasitos.pdf"
             target="_blank"
             rel="noreferrer"
-            className="
-        px-5 py-3
-        rounded-xl
-        bg-[#6C958D]
-        text-white
-        text-sm
-        font-semibold
-        hover:scale-105
-        transition-transform
-      "
+            className=" px-5 py-3 rounded-xl  bg-[#6C958D] text-white text-sm font-semibold hover:scale-105 transition-transform  "
           >
             Open Manual
           </a>
@@ -173,16 +155,7 @@ const Project_pasitos: React.FC = () => {
 
         {/* GALERÍA */}
         <div className="w-full max-w-4xl mt-6">
-          <div
-            className="
-      grid
-      grid-cols-2
-      md:grid-cols-4
-      gap-3
-      auto-rows-[140px]
-      md:auto-rows-[150px]
-    "
-          >
+          <div className=" grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[140px] md:auto-rows-[150px]">
             {/* FOTO 1 — PRINCIPAL */}
             <motion.div
               custom={0}
@@ -190,25 +163,12 @@ const Project_pasitos: React.FC = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="
-    col-span-2
-    row-span-2
-    overflow-hidden
-    rounded-2xl
-    group
-  "
+              className=" col-span-2 row-span-2 overflow-hidden rounded-2xl group "
             >
               <img
                 src="/Projects/Pasitos/Pasitos1.jpeg"
                 alt="Pasitos presentation at CRIT Michoacán"
-                className="
-          w-full
-          h-full
-          object-cover
-          transition-transform
-          duration-500
-          group-hover:scale-105
-        "
+                className=" w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </motion.div>
 
@@ -219,25 +179,12 @@ const Project_pasitos: React.FC = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="
-        col-span-1
-        row-span-1
-        overflow-hidden
-        rounded-2xl
-        group
-      "
+              className=" col-span-1 row-span-1 overflow-hidden rounded-2xl group"
             >
               <img
                 src="/Projects/Pasitos/Pasitos2.jpeg"
                 alt="Pasitos"
-                className="
-          w-full
-          h-full
-          object-cover
-          transition-transform
-          duration-500
-          group-hover:scale-105
-        "
+                className=" w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 "
               />
             </motion.div>
 
@@ -248,25 +195,12 @@ const Project_pasitos: React.FC = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="
-    col-span-1
-    row-span-1
-    overflow-hidden
-    rounded-2xl
-    group
-  "
+              className=" col-span-1 row-span-1 overflow-hidden rounded-2xl group  "
             >
               <img
                 src="/Projects/Pasitos/Pasitos3.jpeg"
                 alt="Pasitos project"
-                className="
-          w-full
-          h-full
-          object-cover
-          transition-transform
-          duration-500
-          group-hover:scale-105
-        "
+                className=" w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 "
               />
             </motion.div>
 
@@ -277,25 +211,12 @@ const Project_pasitos: React.FC = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="
-    col-span-1
-    row-span-1
-    overflow-hidden
-    rounded-2xl
-    group
-  "
+              className=" col-span-1 row-span-1 overflow-hidden rounded-2xl group "
             >
               <img
                 src="/Projects/Pasitos/Pasitos4.jpeg"
                 alt="Pasitos project presentation"
-                className="
-          w-full
-          h-full
-          object-cover
-          transition-transform
-          duration-500
-          group-hover:scale-105
-        "
+                className=" w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </motion.div>
 
@@ -306,25 +227,12 @@ const Project_pasitos: React.FC = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="
-    col-span-1
-    row-span-1
-    overflow-hidden
-    rounded-2xl
-    group
-  "
+              className=" col-span-1 row-span-1 overflow-hidden rounded-2xl group"
             >
               <img
                 src="/Projects/Pasitos/Pasitos5.jpeg"
                 alt="Pasitos"
-                className="
-          w-full
-          h-full
-          object-cover
-          transition-transform
-          duration-500
-          group-hover:scale-105
-        "
+                className=" w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 "
               />
             </motion.div>
           </div>
