@@ -3,7 +3,7 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 interface Contact_MethodsProps {
-  name?: string;
+  name: string;
   link?: string;
   hover?: string;
   onClick?: () => void;
