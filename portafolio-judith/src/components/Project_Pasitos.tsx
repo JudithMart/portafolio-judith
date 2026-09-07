@@ -76,7 +76,7 @@ const Project_pasitos: React.FC = () => {
         />
       </motion.div>
 
-      {/* Video Presentation */}
+      {/* Video  */}
       <motion.div
         variants={scrollReveal}
         initial="hidden"
@@ -153,10 +153,10 @@ const Project_pasitos: React.FC = () => {
           Project presentation and testing at CRIT Michoacán.
         </p>
 
-        {/* GALERÍA */}
+       
         <div className="w-full max-w-4xl mt-6">
           <div className=" grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[140px] md:auto-rows-[150px]">
-            {/* FOTO 1 — PRINCIPAL */}
+            {/* FOTO 1 */}
             <motion.div
               custom={0}
               variants={galleryItem}

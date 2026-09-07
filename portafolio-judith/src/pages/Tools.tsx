@@ -138,19 +138,18 @@ const Tools: React.FC = () => {
         <BackgroundGray>
           <div className="relative ">
             <div className=" absolute inset-0 pointer-events-none z-0 hidden lg:block ">
-              {/* Línea 1 */}
+             
 
               <div className=" absolute  left-[25%] top-10 bottom-10 w-[2px] bg-[#6C958D]/70" />
 
-              {/* Línea 2 */}
+             
 
               <div className=" absolute left-[50%] top-10 bottom-10 w-[2px] bg-[#6C958D]/70" />
 
-              {/* Línea 3 */}
+            
 
               <div className=" absolute left-[75%] top-10 bottom-10 w-[2px] bg-[#6C958D]/70 " />
 
-              {/* DIAMANTES */}
 
               <div className="  absolute  left-[25%]  top-10  -translate-x-1/2  w-3  h-3  rotate-45  bg-[#6C958D] " />
 

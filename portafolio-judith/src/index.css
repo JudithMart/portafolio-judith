@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
+#root,
+a,
+button {
+  cursor: url("/cursor/paw.png") 10 10, auto;
+}
+
+
 body {
 	font-family: "Inter", sans-serif;
 	font-synthesis: none;
@@ -16,6 +25,7 @@ body {
 	min-height: 100vh;
 }
 
+/* Background */
 .bg-layer {
 	position: fixed;
 	inset: 0;

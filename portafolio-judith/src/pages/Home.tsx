@@ -8,7 +8,7 @@ import MegaTail from "../components/MegaTail";
 const Home: React.FC = () => {
   return (
     <section className="flex items-center justify-center px-4 pt-36 md:pt-36 pb-28">
-      {/* CONTENEDOR GENERAL DEL HERO */}
+      {/* HERO */}
       <div
         className="
           relative
@@ -17,7 +17,6 @@ const Home: React.FC = () => {
           min-h-[520px]
         "
       >
-
         <div className="relative z-10">
           <BackgroundGray className="h-[300px] sm:h-[453px] ">
             <div className=" flex flex-col items-center justify-center">
@@ -96,15 +95,7 @@ const Home: React.FC = () => {
         {/* =================================================
             MEGA
         ================================================== */}
-        <div
-          className="
-    absolute
-    z-50
-    right-[-20px]
-    bottom-[-20px]
-    group
-  "
-        >
+        <div className=" absolute z-50 right-[-20px] bottom-[-20px] group">
           {/* BURBUJA */}
           <div
             className="
@@ -151,29 +142,15 @@ const Home: React.FC = () => {
             Hello I´m Mega
           </div>
 
-          <div
-            className="
-            absolute
-            z-40
-          
-            right-5
-            sm:right-[-30px]
-            md:right-[-45px]
-
-           
-            bottom-20
-            sm:bottom-[-10px]
-            md:bottom-[-20px]
-            pointer-events-auto
-           
-          "
+          <div className=" absolute z-40 right-5 sm:right-[-30px] md:right-[-45px]
+             bottom-20 sm:bottom-[-10px] md:bottom-[-20px] pointer-events-auto"
           >
             <MegaTail />
           </div>
         </div>
 
         {/* =================================================
-            BOTONES
+            BUTTON
         ================================================== */}
 
         <div

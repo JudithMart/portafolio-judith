@@ -48,8 +48,7 @@ const technologyIcons: Record<string, React.ElementType> = {
   Express: SiExpress,
 };
 
-
-const ButtonProjects: React.FC<ProjectsProps> = ({
+const CardProjects: React.FC<ProjectsProps> = ({
   image,
   demo,
   github,
@@ -61,9 +60,9 @@ const ButtonProjects: React.FC<ProjectsProps> = ({
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <article
-     onMouseEnter={() => setIsOpen(true)}
+      onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
-       className={`relative flex flex-col cursor-pointer h-44 w-36 sm:h-52 sm:w-56 md:h-52 md:w-72 group
+      className={`relative flex flex-col cursor-pointer h-44 w-36 sm:h-52 sm:w-56 md:h-52 md:w-72 group
         ${isOpen ? "z-50" : "z-0"}`}
     >
       {/* =========================
@@ -78,7 +77,7 @@ const ButtonProjects: React.FC<ProjectsProps> = ({
       />
 
       {/* =========================
-          TITULO NORMAL
+          TITLE
       ========================== */}
       <p className=" text-center text-xs  sm:text-sm md:text-base font-bold uppercase text-gray-300  duration-300 md:group-hover:opacity-0">
         {title}
@@ -114,33 +113,36 @@ const ButtonProjects: React.FC<ProjectsProps> = ({
           </a>
         )}
 
-         {doc && (
-            <Link
-              to={doc}
-              onClick={(e) => e.stopPropagation()}
-              className=" flex items-center gap-2 font-thin text-xs text-white hover:text-[#8FC9BD]"
-            >
-              <IoDocumentsOutline size={14} />
-              Details
-            </Link>
-          )}
+        {doc && (
+          <Link
+            to={doc}
+            onClick={(e) => e.stopPropagation()}
+            className=" flex items-center gap-2 font-thin text-xs text-white hover:text-[#8FC9BD]"
+          >
+            <IoDocumentsOutline size={14} />
+            Details
+          </Link>
+        )}
       </div>
-
 
       {/* =========================
           HOVER CARD
       ========================== */}
-      <div className={`absolute invisible md:visible z-50 min-h-[280px] rounded-[2rem] bg-secondary/90 backdrop-blur-sm
+      <div
+        className={`absolute invisible md:visible z-50 min-h-[280px] rounded-[2rem] bg-secondary/90 backdrop-blur-sm
         p-4 flex flex-col transition-all duration-300 ease-out overflow-hidden
-        ${isOpen ? "opacity-100 scale-100 pointer-events-auto" 
-          : "opacity-0 scale-95 pointer-events-none"}`}> 
-      
-        {/* TITULO */}
+        ${
+          isOpen
+            ? "opacity-100 scale-100 pointer-events-auto"
+            : "opacity-0 scale-95 pointer-events-none"
+        }`}
+      >
+        {/* TITLE */}
         <h3 className=" text-center text-sm sm:text-base md:text-lg font-bold uppercase leading-tight text-white">
           {title}
         </h3>
 
-        {/* DESCRIPCIÓN */}
+        {/* DESCRIPTION */}
         <p className="mt-2 text-sm leading-relaxed text-white/75">
           {description}
         </p>
@@ -214,4 +216,4 @@ const ButtonProjects: React.FC<ProjectsProps> = ({
   );
 };
 
-export default ButtonProjects;
+export default CardProjects;
