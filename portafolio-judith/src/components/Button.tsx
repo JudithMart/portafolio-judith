@@ -11,7 +11,6 @@ const Button: React.FC<ButtonProps> = ({ texto, link }) => {
   return (
     <Link to={link}>
       <motion.button
-       
         whileHover={{
           scale: 1.08,
           y: -2,
@@ -24,19 +23,7 @@ const Button: React.FC<ButtonProps> = ({ texto, link }) => {
           stiffness: 300,
           damping: 25,
         }}
-        className="
-          h-10
-          w-24
-          md:h-12
-          md:w-32
-          bg-secondary
-          rounded-2xl
-          flex
-          items-center
-          justify-center
-          relative
-          shadow-2xl
-          shadow-black
+        className=" h-10 w-24 md:h-12 md:w-32 bg-secondary rounded-2xl flex items-center justify-center relative shadow-2xl shadow-black
           
         "
       >
