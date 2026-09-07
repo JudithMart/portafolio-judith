@@ -22,7 +22,7 @@ const Course: React.FC<ProjectsProps> = ({
       type="button"
       onClick={handleOpenPdf}
       disabled={!pdf}
-      className=" relative  flex flex-col  cursor-pointer h-40 w-36 sm:h-52 sm:w-56 md:h-40 md:w-72 group disabled:cursor-default"
+      className=" relative  flex flex-col h-40 w-36 sm:h-52 sm:w-56 md:h-40 md:w-72 group disabled:cursor-default"
     >
       {/* =========================
           IMAGEN
@@ -36,7 +36,7 @@ const Course: React.FC<ProjectsProps> = ({
       />
 
       {/* =========================
-          TITULO NORMAL
+         TITLE
       ========================== */}
       <p className=" text-center text-xs  sm:text-sm md:text-base font-bold uppercase text-gray-300  duration-300 ">
         {title}

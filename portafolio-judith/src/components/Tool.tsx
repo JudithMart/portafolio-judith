@@ -105,7 +105,7 @@ const Tool: React.FC<ToolProps> = ({ name, level, projects }) => {
             ease: "easeOut",
           }}
           className=" relative z-10 flex items-center justify-center w-8 h-8 md:h-14 md:w-14 rounded-2xl
-            bg-[#6C958D] shadow-lg cursor-pointer transition-shadow duration-300 group-hover:shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
+            bg-[#6C958D] shadow-lg  transition-shadow duration-300 group-hover:shadow-[0_10px_30px_rgba(0,0,0,0.25)]"
         >
           {Icon && <Icon className="text-white text-xl md:text-3xl" />}
         </motion.div>
@@ -144,7 +144,7 @@ const Tool: React.FC<ToolProps> = ({ name, level, projects }) => {
             }}
             className=" invisible md:visible z-[9999] w-64 md:w-72 rounded-3xl bg-[#6C958D]/90 backdrop-blur-md border border-white/10 p-5 shadow-[0_15px_40px_rgba(0,0,0,0.35)] pointer-events-none"
           >
-            {/* Nombre */}
+            {/* Name */}
 
             <div className="flex items-center gap-3">
               {Icon && <Icon className="text-white text-2xl" />}
@@ -164,7 +164,7 @@ const Tool: React.FC<ToolProps> = ({ name, level, projects }) => {
               <p className="mt-1 text-white text-sm font-medium">{level}</p>
             </div>
 
-            {/* Proyectos */}
+            {/* Proyects */}
 
             {projects.length > 0 && (
               <div className="mt-4">

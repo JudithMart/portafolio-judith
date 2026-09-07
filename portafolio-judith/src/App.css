@@ -1,6 +1,3 @@
-:root {
-  cursor: url("/cursor/paw.png") 10 10, auto;
-}
 
 .animated-border {
   animation: borderMove 7s linear infinite;

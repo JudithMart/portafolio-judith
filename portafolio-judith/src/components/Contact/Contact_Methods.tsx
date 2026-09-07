@@ -3,7 +3,7 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 
 interface Contact_MethodsProps {
-  name?: string;
+  name: string;
   link?: string;
   hover?: string;
   onClick?: () => void;
@@ -42,7 +42,7 @@ const Contact_Methods: React.FC<Contact_MethodsProps> = ({
           target="_blank"
           rel="noopener noreferrer"
           className="group relative z-10 flex items-center justify-center w-8 h-8 md:h-14 md:w-14 
-        rounded-2xl bg-[#6C958D] shadow-md cursor-pointer transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-secondary/50"
+        rounded-2xl bg-[#6C958D] shadow-md  transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-secondary/50"
           style={{ ["--hover-color" as string]: hoverColor }}
         >
           {Icon && (
@@ -53,7 +53,7 @@ const Contact_Methods: React.FC<Contact_MethodsProps> = ({
         <button
           onClick={onClick}
           className="group relative z-10 flex items-center justify-center w-8 h-8 md:h-14 md:w-14 
-        rounded-2xl bg-[#6C958D] shadow-md cursor-pointer transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-secondary/50"
+        rounded-2xl bg-[#6C958D] shadow-md transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-secondary/50"
           style={{ ["--hover-color" as string]: hoverColor }}
         >
           {" "}

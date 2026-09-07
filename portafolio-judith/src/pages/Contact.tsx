@@ -29,13 +29,13 @@ const Contact: React.FC = () => {
     },
     {
       name: "Whatsapp",
-      link: "https://wa.me/524591237833?text=Hola%20Agui,%20vi%20tu%20portfolio%20y%20me%20gustaría%20hablar%20contigo.",
+      link: "https://wa.me/524591237833?text=Hello%20Agui,%20I%20saw%20your%20portfolio%20and%20I`m%20interested%20in%20speaking%20with%20you.",
       hover: "bg-green-500",
     },
   ];
   return (
     <section className=" z-50 flex items-center justify-center px-4 pt-36 md:pt-32  pb-28">
-      {/* CONTENEDOR GENERAL DEL HERO */}
+      {/*  HERO */}
       <div className=" relative  ">
         <BackgroundGray>
           <div className=" flex flex-col items-center justify-center py-10 px-4  md:p-20">
@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
           </div>
         </BackgroundGray>
         {/* =================================================
-            BOTONES
+            BUTTON
         ================================================== */}
 
         <div
@@ -72,7 +72,7 @@ const Contact: React.FC = () => {
             />
           ))}
         </div>
-        {/* FORMULARIO */}
+        {/* FORM */}
 
         {showForm && <ContactForm onClose={() => setShowForm(false)} />}
       </div>

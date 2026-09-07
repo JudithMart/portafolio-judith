@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
     {
       icon: FaWhatsapp,
       name: "Whatsapp",
-      link: "https://wa.me/524591237833?text=Hola%20Agui,%20vi%20tu%20portfolio%20y%20me%20gustaría%20hablar%20contigo.",
+       link: "https://wa.me/524591237833?text=Hello%20Agui,%20I%20saw%20your%20portfolio%20and%20I`m%20interested%20in%20speaking%20with%20you.",
     },
   ];
 
