@@ -61,7 +61,7 @@ Portafolio/
 └── vercel.json
 ```
 
-## 🚀 Empezando
+## Empezando
 
 ### Requisitos previos
 - [Node.js](https://nodejs.org/) 18 o superior
@@ -101,15 +101,15 @@ npm run preview   # Sirve localmente el build de producción
 npm run lint      # Ejecuta ESLint sobre el proyecto
 ```
 
-## ☁️ Despliegue
+##  Despliegue
 
 El proyecto incluye configuración lista para [Vercel](https://vercel.com/) (`vercel.json`). Recuerda configurar las mismas variables de entorno en el panel de tu proyecto de Vercel.
 
-## 📬 Contacto
+##  Contacto
 
 - **LinkedIn**: [linkedin.com/in/aguimartinezg](https://www.linkedin.com/in/aguimartinezg)
 - **GitHub**: [github.com/JudithMart](https://github.com/JudithMart)
 
-## 📄 Licencia
+##  Licencia
 
 Todos los derechos reservados. El código, contenido y assets de este portafolio son de uso personal.
