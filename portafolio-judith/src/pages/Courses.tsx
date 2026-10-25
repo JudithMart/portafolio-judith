@@ -18,6 +18,11 @@ const Courses: React.FC = () => {
       pdf: "/Courses/Unity.pdf",
       title: "Unity y C# Fundamentals: VideoGame Development 2D",
     },
+    {
+      image: "/Courses/aws.png",
+      pdf: "/Courses/aws.pdf",
+      title: "Fundamentals of AWS ",
+    },
   ];
 
   return (

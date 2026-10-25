@@ -105,6 +105,22 @@ const Resume: React.FC = () => {
               <SectionTitle title="Professional Experience" />
 
               <div className="mt-6 space-y-8">
+                {/* ERP SYSTEM */}
+                <Experience
+                  company="ERP SYSTEM – SERVICIOS RAMEZ S.A. DE C.V."
+                  link=""
+                  doc=""
+                  role="Software Developer"
+                  date="October 2026 – Present"
+                  description={[
+                    "Developing an ERP system for inventory, product, and warehouse operations management to optimize distribution and order fulfillment processes.",
+                    "Implementing user interfaces with React and TypeScript, integrating Supabase for authentication, user management, and data access.",
+                    "Developing authentication features, including user profile retrieval, role- and warehouse-based access control, session management, and validation.",
+                    "Implementing product management features, barcode validation, and data retrieval using PostgreSQL.",
+                    "Collaborating on a solution to centralize warehouse operations and improve the organization and management of business data.",
+                  ]}
+                />
+
                 {/* BICITAS */}
                 <Experience
                   company="BiCitas Históricas"
